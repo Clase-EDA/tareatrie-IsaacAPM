@@ -32,6 +32,10 @@ public class NodoTrie {
     public NodoTrie getHijo(int i){
 	return this.hijos[i];
     }
+    
+    public NodoTrie[] getHijos(){
+        return hijos; 
+    }
 
     public boolean getEsFinDePalabra(){
 	return this.esFinDePalabra;
@@ -39,5 +43,19 @@ public class NodoTrie {
 
     public void setEsFinDePalabra(){
 	this.esFinDePalabra = !this.esFinDePalabra;
+    }
+    
+    public boolean isEmpty(){
+        NodoTrie act;
+        boolean band = true;
+        int i = 0;
+        while(i < hijos.length && band){        
+            act = hijos[i];
+            if(act == null){
+                band = false;
+            }
+            i++;
+        }
+        return band;
     }
 }
